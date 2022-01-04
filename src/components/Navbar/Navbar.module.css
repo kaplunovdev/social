@@ -1,0 +1,22 @@
+.nav {
+  grid-area: n;
+  background: lightcoral;
+  width: 200px;
+  padding: 10px;
+}
+
+.item {
+  font-size: 20px;
+  color: green;
+}
+.item a{
+  text-decoration: none;
+font-family: sans-serif;
+}
+.item a.active{
+  color: white;
+}
+.active a {
+  color: white;
+
+}
