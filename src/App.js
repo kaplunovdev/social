@@ -72,10 +72,10 @@ const AppContainer = compose(
 )(App)
 
 const SamuraiJSApp = (props) => {
-    return <HashRouter>
+    return <BrowserRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </HashRouter>
+    </BrowserRouter>
 }
 export default SamuraiJSApp;

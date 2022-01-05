@@ -2,11 +2,17 @@ import React from "react";
 import style from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import defaultPhoto from '../../../assets/images/avatar.png'
 
-const ProfileInfo = ({profile,status,updateStatus}) => {
-    if(!profile){
+
+const ProfileInfo = ({profile, status, updateStatus, isOwner, savePhoto}) => {
+    if (!profile) {
         return <Preloader/>
     }
+    const onMainPhotoSelected = (e) => {
+        savePhoto(e.target.files[0])
+    }
+
     return (
         <div>
 
@@ -18,7 +24,8 @@ const ProfileInfo = ({profile,status,updateStatus}) => {
             <div className={style.userCard}>
 
                 <div className={style.avatar}>
-                    <img src={profile.photos.large} alt=''/>
+                    <img src={profile.photos.large|| defaultPhoto} alt=''/>
+                    {isOwner && <input type={'file'} onChange={onMainPhotoSelected}/>}
                 </div>
                 <div>
                     <p>{profile.fullName}</p>

@@ -1,6 +1,7 @@
 import React from "react";
 import Paginator from "../common/Paginator/Paginator";
 import User from "./User";
+import style from "./Users.module.css";
 
 let Users = ({currentPage, totalItemsCount, pageSize, onPageChanged, users, ...props}) => {
     return (
@@ -25,7 +26,9 @@ let Users = ({currentPage, totalItemsCount, pageSize, onPageChanged, users, ...p
                 )}
             </div>
 
-
+            <div className={style.showMore}>
+                <button>Show more</button>
+            </div>
         </div>
     )
 
