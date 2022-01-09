@@ -3,12 +3,12 @@ import style from "./ProfileInfo.module.css";
 
 const ProfileStatusWithHooks = (props) => {
 
-    const [editMode,setEditMode] = useState(false)
-    const [status,setStatus] = useState(props.status)
+    const [editMode, setEditMode] = useState(false)
+    const [status, setStatus] = useState(props.status)
 
-    useEffect(()=>{
+    useEffect(() => {
         setStatus(props.status)
-    },[props.status])
+    }, [props.status])
 
     const activateMode = () => {
         setEditMode(true)
@@ -28,9 +28,7 @@ const ProfileStatusWithHooks = (props) => {
                 <div>
                     <span
                         onDoubleClick={activateMode}
-
-
-                    >{props.status || 'Non status'}</span>
+                    > Статус: {props.status || 'Non status'}</span>
                 </div>
             }
             {editMode &&
@@ -40,7 +38,7 @@ const ProfileStatusWithHooks = (props) => {
                         autoFocus={true}
                         onChange={onStatusChange}
                         value={status}
-                           />
+                    />
                 </div>
             }
 
