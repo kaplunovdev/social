@@ -47,7 +47,7 @@ const profileReducer = (state = initialState, action) => {
             }
 
         case SAVE_PHOTO_SUCCESS:
-            debugger
+
             return {
                 ...state,
                 profile: {...state.profile, photos: action.photos}
@@ -86,7 +86,7 @@ export const updateStatus = (status) => async (dispatch) => {
             dispatch(setStatus(status))
         }
     }catch (e) {
-        alert('Error', e)
+        console.log('Error', e)
     }
 
 }

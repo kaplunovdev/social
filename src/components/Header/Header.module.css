@@ -1,15 +1,9 @@
 .header {
-    grid-area: h;
-    background: rgb(109, 235, 109);
-    min-height: 69px;
+    background: #fff;
     position: relative;
-}
-
-.header img {
-    max-width: 50px;
-    display: block;
-    margin: 10px;
-    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 .loginBlock {
@@ -18,3 +12,13 @@
     margin-top:-10px ;
     position: absolute;
 }
+.logo{
+    max-width: 40px;
+}
+.logo a{
+    display: block;
+}
+.logo img{
+    max-width: 100%;
+}
+

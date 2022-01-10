@@ -2,6 +2,9 @@
     display: flex;
     margin-bottom: 40px;
 }
+.userCard form{
+    width: 75%;
+}
 
 .content {
 
@@ -9,8 +12,25 @@
 
 .ProfileStatus {
     margin-bottom: 20px;
+    background: white;
+    border-radius: 10px;
 }
-
+.ProfileStatus input:focus{
+    border: 1px solid #269126;
+    padding: 10px;
+    font-size: 16px;
+}
+.editBtn{
+    border: none;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    float: right;
+    clear: both;
+}
+.editBtn:hover{
+    color:red;
+}
 .image_top {
     margin-bottom: 20px;
     overflow: hidden;
@@ -23,38 +43,79 @@
 
 .avatar {
     position: relative;
-    max-width: 100px;
-    height: 100px;
-    margin-right: 20px;
+    width: 150px;
+    margin-right: 10px;
     overflow: hidden;
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #dbdbdb;
 }
 
 .avatar:hover .inputChangeImage {
     display: block;
     transition: display .5s;
+    width: 89px;
 }
 
 .avatar img {
     max-width: 100%;
     display: block;
-
 }
 
 .inputChangeImage {
     position: absolute;
-    top: 50%;
+    top: 38%;
     left: 50%;
-    transform: translate(-17%, -54%);
+    transform: translate(-20%, -81%);
     display: none;
+    border: none;
+    background: none;
 
 
 }
-.info p{
-    margin: 10px;
+.inputChangeImage::before{
+    position: absolute;
+    color: white;
+    width: 100%;
+    content: 'Изменить';
+    background: #d07272;
+    padding: 4px;
+    border-radius: 5px;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    text-align: center;
+}
+.buttonSave{
+    border: 1px solid tomato;
+    color: tomato;
+    border-radius: 5px;
+    background: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+}
+.inputChangeImage input{
+    width: 89px;
 }
 .info p:first-child{
     margin-top:0;
 }
 .formSummaryError{
     color: tomato;
+}
+.info{
+    width: 75%;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #dbdbdb;
+    padding: 15px;
+
+}
+.userName{
+    font-size: 18px;
+    font-weight: bold;
 }

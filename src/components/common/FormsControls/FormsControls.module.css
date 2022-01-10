@@ -1,18 +1,23 @@
-.form-control {
-
+.formControl input {
+    width: 50%;
+    border: 1px solid #dbdbdb;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 .formControl.error input,
 .formControl.error textarea {
- border: 2px solid tomato;
+    border: 2px solid tomato;
 }
+
 .formControl.error span {
- color: tomato;
+    color: tomato;
 }
+
 .formSummaryError {
- max-width: 300px;
- border: 2px solid tomato;
- padding: 5px;
- color: tomato;
+    max-width: 300px;
+    border: 2px solid tomato;
+    padding: 5px;
+    color: tomato;
 
 }

@@ -66,3 +66,8 @@ justify-content: center;
     border: none;
     cursor: pointer;
 }
+.usersBlock{
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+}

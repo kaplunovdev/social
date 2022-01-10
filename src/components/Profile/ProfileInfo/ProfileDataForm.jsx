@@ -6,17 +6,17 @@ import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import style from './ProfileInfo.module.css'
 
 
-
-const ProfileDataForm = ({handleSubmit, status, updateStatus, profile, aboutMe,error}) => {
+const ProfileDataForm = ({handleSubmit, status, updateStatus, profile, aboutMe, error}) => {
     return (
-        <form onSubmit={handleSubmit}>
+        <form className={style.info} onSubmit={handleSubmit}>
+
             <div>
-                <button>Save</button>
+                <button className={style.buttonSave}>Save</button>
             </div>
             {error && <div className={style.formSummaryError}>
                 {error}
             </div>}
-            <div>Full name: {createField("Full name", "fullName", [], Input)}</div>
+            <div className={style.userName}>Full name: {createField("Full name", "fullName", [], Input)}</div>
             <div>Ищу работу:
                 {createField("", "lookingForAJob", [], Input, {type: 'checkbox'})}
             </div>
@@ -36,6 +36,7 @@ const ProfileDataForm = ({handleSubmit, status, updateStatus, profile, aboutMe,e
         })}
 
             <p><ProfileStatusWithHooks status={status} updateStatus={updateStatus}/></p>
+
 
         </form>
     )

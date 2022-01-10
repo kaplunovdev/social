@@ -33,9 +33,7 @@ export class ProfileContainer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        if (this.props.params.userId !== prevProps.params.userId) {
-            this.refreshProfile()
-        }
+        this.refreshProfile()
     }
 
     render() {
@@ -45,8 +43,8 @@ export class ProfileContainer extends React.Component {
                      isOwner={!this.props.params.userId}
                      status={this.props.status}
                      updateStatus={this.props.updateStatus}
-                    savePhoto={this.props.savePhoto}
-                    saveProfile={this.props.saveProfile}
+                     savePhoto={this.props.savePhoto}
+                     saveProfile={this.props.saveProfile}
             />
         )
     }
@@ -62,7 +60,7 @@ let mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus,savePhoto, saveProfile}),
+    connect(mapStateToProps, {getUserProfile, getStatus, updateStatus, savePhoto, saveProfile}),
     withRouter,
     withAuthRedirect,
 )(ProfileContainer);

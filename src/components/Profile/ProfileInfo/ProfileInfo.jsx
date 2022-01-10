@@ -6,7 +6,7 @@ import defaultPhoto from '../../../assets/images/avatar.png'
 import ProfileDataForm from "./ProfileDataForm";
 
 
-const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile,status,updateStatus}) => {
+const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile, status, updateStatus}) => {
 
     const [editMode, setEditMode] = useState(false)
     if (!profile) {
@@ -26,15 +26,15 @@ const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile,status,updateStat
     return (
         <div>
 
-            <div className={style.image_top}>
-                <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>
-            </div>
+            {/*<div className={style.image_top}>*/}
+            {/*    <img src="https://www.orangesmile.com/ru/foto/usa/fodder120132.jpg" alt='image'/>*/}
+            {/*</div>*/}
 
 
             <div className={style.userCard}>
 
                 <div className={style.avatar}>
-                    <img src={profile.photos && profile.photos.large || defaultPhoto} alt=''/>
+                    <img src={profile.photos && profile.photos.large} alt=''/>
                     {isOwner && <input className={style.inputChangeImage} type={'file'}
                                        onChange={onMainPhotoSelected}
 
@@ -65,25 +65,28 @@ const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile,status,updateStat
 };
 const ProfileData = ({profile, status, updateStatus, isOwner, goToEditMode}) => {
     return (
+
         <div className={style.info}>
+
             {isOwner &&
                 <div>
-                    <button onClick={goToEditMode}>Edit</button>
+                    <button className={style.editBtn} onClick={goToEditMode}>✐</button>
+
                 </div>}
 
-            <p>{profile.fullName}</p>
+            <p className={style.userName}>{profile.fullName}</p>
+            <p><ProfileStatusWithHooks status={status} updateStatus={updateStatus}/></p>
             <p>О себе:{profile.aboutMe || ' Нет записи'}</p>
             <p>Ищу работу:{profile.lookingForAJob ? ' Да' : ' Нет'}</p>
 
-            <div>
+            <p>
                 Мои скиллы: {profile.lookingForAJobDescription}
-            </div>
+            </p>
 
             <p>Контакты: {Object.keys(profile.contacts).map(key => {
                 return (<Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>)
             })}</p>
 
-            <p><ProfileStatusWithHooks status={status} updateStatus={updateStatus}/></p>
 
         </div>
     )
