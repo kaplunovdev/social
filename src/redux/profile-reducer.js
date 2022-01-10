@@ -1,5 +1,4 @@
 import {profileAPI, usersAPI} from "../api/api";
-import profile from "../components/Profile/Profile";
 import {stopSubmit} from "redux-form";
 
 const ADD_POST = 'ADD-POST'
@@ -81,10 +80,15 @@ export const getStatus = (userId) => async (dispatch) => {
     dispatch(setStatus(response.data))
 }
 export const updateStatus = (status) => async (dispatch) => {
-    const response = await profileAPI.updateStatus(status)
-    if (response.data.resultCode === 0) {
-        dispatch(setStatus(status))
+    try {
+        const response = await profileAPI.updateStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(setStatus(status))
+        }
+    }catch (e) {
+        alert('Error', e)
     }
+
 }
 export const savePhoto = (file) => async (dispatch) => {
     const response = await profileAPI.savePhoto(file)

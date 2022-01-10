@@ -3,11 +3,10 @@ import style from "./ProfileInfo.module.css";
 import Preloader from "../../common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 import defaultPhoto from '../../../assets/images/avatar.png'
-import Profile from "../Profile";
 import ProfileDataForm from "./ProfileDataForm";
 
 
-const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile}) => {
+const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile,status,updateStatus}) => {
 
     const [editMode, setEditMode] = useState(false)
     if (!profile) {
@@ -50,6 +49,8 @@ const ProfileInfo = ({profile, isOwner, savePhoto, saveProfile}) => {
                     <ProfileData
                         profile={profile}
                         isOwner={isOwner}
+                        status={status}
+                        updateStatus={updateStatus}
                         goToEditMode={() => {
                             setEditMode(true)
                         }}
